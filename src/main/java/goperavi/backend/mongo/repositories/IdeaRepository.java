@@ -1,3 +1,5 @@
+package goperavi.backend.mongo.repositories;
+
 import cl.usach.traffictweet.mongo.models.Occurrence;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

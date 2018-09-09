@@ -1,3 +1,5 @@
+package goperavi.backend.mongo.models;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
