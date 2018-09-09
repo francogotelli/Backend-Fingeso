@@ -1,12 +1,7 @@
 package goperavi.backend.mongo.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-
-import javax.persistence.Id;
-import java.util.Date;
-import java.util.List;
 
 @Document(collection = "ideas")
 public class Idea {
@@ -14,7 +9,7 @@ public class Idea {
     @Field("nombre")
     private String nombre;
 
-    private Interger evaluacionesPositivas;
+    private Integer evaluacionesPositivas;
     private Integer evaluacionesNegativas;
     private Boolean esReto;
 
@@ -23,7 +18,7 @@ public class Idea {
 
     public Idea() {}
 
-    public Occurrence(String nombre,  Interger evaluacionesNegativas, Integer evaluacionesPositivas, Boolean esReto, String descripcion, String fecha) {
+    public Idea(String nombre,  Integer evaluacionesNegativas, Integer evaluacionesPositivas, Boolean esReto, String descripcion, String fecha) {
         this.nombre = nombre;
         this.evaluacionesNegativas = evaluacionesNegativas;
         this.evaluacionesPositivas = evaluacionesPositivas;
@@ -36,11 +31,11 @@ public class Idea {
         return nombre;
     }
 
-    public Interger getEvaluacionesNegativas() {
+    public int getEvaluacionesNegativas() {
         return evaluacionesNegativas;
     }
 
-    public Interger getEvaluacionesPositivas() {
+    public Integer getEvaluacionesPositivas() {
         return evaluacionesPositivas;
     }
 
@@ -49,10 +44,10 @@ public class Idea {
     }
 
     public String getDescripcio() {
-        return descripcio;
+        return descripcion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 }
