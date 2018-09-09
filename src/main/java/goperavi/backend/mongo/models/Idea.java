@@ -43,7 +43,7 @@ public class Idea {
         return esReto;
     }
 
-    public String getDescripcio() {
+    public String getDescripcion() {
         return descripcion;
     }
 
