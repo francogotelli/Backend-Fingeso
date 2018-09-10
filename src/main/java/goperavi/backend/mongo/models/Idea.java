@@ -1,53 +1,66 @@
 package goperavi.backend.mongo.models;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+
+import javax.persistence.Id;
 
 @Document(collection = "ideas")
 public class Idea {
 
-    @Field("nombre")
+    @Id
+    public String id;
     private String nombre;
-
     private Integer evaluacionesPositivas;
     private Integer evaluacionesNegativas;
-    private Boolean esReto;
-
     private String descripcion;
-    private String fecha;
 
-    public Idea() {}
+    public Idea() {
+    }
 
-    public Idea(String nombre,  Integer evaluacionesNegativas, Integer evaluacionesPositivas, Boolean esReto, String descripcion, String fecha) {
+    public Idea(String nombre, Integer evaluacionesPositivas, Integer evaluacionesNegativas, String descripcion) {
         this.nombre = nombre;
-        this.evaluacionesNegativas = evaluacionesNegativas;
         this.evaluacionesPositivas = evaluacionesPositivas;
-        this.esReto = esReto;
+        this.evaluacionesNegativas = evaluacionesNegativas;
         this.descripcion = descripcion;
-        this.fecha = fecha;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getEvaluacionesNegativas() {
-        return evaluacionesNegativas;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Integer getEvaluacionesPositivas() {
         return evaluacionesPositivas;
     }
 
-    public Boolean getEsReto() {
-        return esReto;
+    public void setEvaluacionesPositivas(Integer evaluacionesPositivas) {
+        this.evaluacionesPositivas = evaluacionesPositivas;
+    }
+
+    public Integer getEvaluacionesNegativas() {
+        return evaluacionesNegativas;
+    }
+
+    public void setEvaluacionesNegativas(Integer evaluacionesNegativas) {
+        this.evaluacionesNegativas = evaluacionesNegativas;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public String getFecha() {
-        return fecha;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

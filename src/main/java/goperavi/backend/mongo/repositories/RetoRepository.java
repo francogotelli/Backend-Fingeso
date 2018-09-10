@@ -1,8 +1,8 @@
 package goperavi.backend.mongo.repositories;
 
-import goperavi.backend.mongo.models.Idea;
+import goperavi.backend.mongo.models.Reto;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface IdeaRepository extends MongoRepository<Idea, String>{
+public interface RetoRepository extends MongoRepository<Reto, String>{
 
 }

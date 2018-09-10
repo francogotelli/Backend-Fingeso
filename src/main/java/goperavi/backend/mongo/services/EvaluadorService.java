@@ -1,7 +1,7 @@
 package goperavi.backend.mongo.services;
 
-import goperavi.backend.mongo.models.Idea;
-import goperavi.backend.mongo.repositories.IdeaRepository;
+import goperavi.backend.mongo.models.Evaluador;
+import goperavi.backend.mongo.repositories.EvaluadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,36 +10,36 @@ import java.util.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/ideas")
-public class IdeaService {
+@RequestMapping("/evaluadores")
+public class EvaluadorService {
     @Autowired
-    private IdeaRepository ideaRepository;
+    private EvaluadorRepository evaluadorRepository;
 
 
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Idea> getAll() {
-        return ideaRepository.findAll();
+    public List<Evaluador> getAll() {
+        return evaluadorRepository.findAll();
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     @ResponseBody
     public void delete() {
-        ideaRepository.deleteAll();
+        evaluadorRepository.deleteAll();
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     @ResponseBody
     public void save() {
-        ideaRepository.save(new Idea("nombre idea",1,2,"descripcion idea"));
+        evaluadorRepository.save(new Evaluador("nombre usuario","correo usuario", "id ideas de usuario"));
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    public Idea create(@RequestBody Idea resource) {
-        return ideaRepository.save(resource);
+    public Evaluador create(@RequestBody Evaluador resource) {
+        return evaluadorRepository.save(resource);
     }
 
 }
